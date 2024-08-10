@@ -1,0 +1,7 @@
+- 7-zip
+- f.lux
+- Greenshot
+- Google Chrome
+- Microsoft Visual Studio Code
+- Opera
+- Sourcetree

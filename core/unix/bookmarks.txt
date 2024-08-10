@@ -1,0 +1,3 @@
+C:/home/work/in-progress/wasm-rust-tuto
+C:/home/work/in-progress/wasm-mappings
+C:/home/core

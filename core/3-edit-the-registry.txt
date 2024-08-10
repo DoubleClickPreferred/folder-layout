@@ -1,0 +1,27 @@
+---------
+Notepad++
+---------
+
+Add the command:
+
+- regedit.exe
+- in HKEY_CLASSES_ROOT\*\shell, new subkey "Open with Notepad++", new sub-subkey "command"
+- set the content of the "command" to '"C:\home\static\bin\npp-8.5.7.portable.x64\notepad++.exe" "%1"'
+
+Set an icon:
+
+- on key HKEY_CLASSES_ROOT\*\shell\Open with Notepad++, create a String value (REG_SZ) named Icon
+- set its value to C:\home\static\bin\npp-8.5.7.portable.x64\notepad++.exe,0
+
+
+--------
+WinMerge
+--------
+
+WinMerge proposes a menu in its own UI to do this.
+
+- open WinMerge, open Edit > Tools...
+- go to Shell Integration (probably at the very bottom) then:
+   1. register shell extension
+   2. register shell extension for current user only
+   3. add to context menu

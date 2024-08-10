@@ -1,0 +1,1 @@
+This repository holds the companion files for my explanation of the [folder layout](https://doubleclickpreferred.com/tutorials/pc-setup/folder-layout.html) I use.

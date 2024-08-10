@@ -1,0 +1,54 @@
+Lua needs to be available
+-------------------------
+
+The script 2-set-basic-environment-variables.bat prepares some environment variables on Windows.
+
+In particular, it checks the user-specific PATH variable and updates it so that the programs in the static/bin/ folder (static/ is assumed to be a sibling of the core/ folder) are available on the Command Line Interface (CLI) of Windows.
+
+Because the CMD language is too tricky for me, the actual program is coded in Lua.
+
+!! Please check that Lua is available in the static/bin/ folder at lua-5.2.3_Win64_bin.
+
+
+
+Expansion of program locations
+------------------------------
+
+The script 2-set-basic-environment-variables.bat will read the user-specific PATH and then write it back.
+
+In the process, variables will be resolved and lost.
+
+For instance, I had some program locations in my user-specific PATH that were using the variable USERPROFILE (ex: %USERPROFILE%\AppData\Local\Microsoft\WindowsApps). When the script reads the PATH, it does receive the program locations with the variables. But when writing back the program locations, the variables get resolved and so they are not there anymore in the final result.
+
+!! If you want to keep these variables, do not use the script. Instead, modify the PATH by hand. The rules followed by the script are simple to imitate:
+
+   1. if a program folder has its own bin/ folder, the program location to use is that bin/ folder.
+      
+      ex: nvim has its own bin/ folder (-> you can see that the nvim.exe is located there)
+          => add to PATH the program location "<BIN_FOLDER>\nvim-win64\bin"
+   
+   
+   2. if a program folder has no bin/ folder, the program location is the program folder itself
+      
+      ex: fd has no bin/ folder (-> you can see that the fd.exe is directly available in the program folder)
+          => add to PATH the program location "<BIN_FOLDER>\fd-v8.7.0-x86_64-pc-windows-gnu"
+
+
+
+The Linux shell inherits the PATH variables of Windows
+------------------------------------------------------
+
+Indeed, WezTerm uses the PATH variable_s_ of Windows (WezTerm actual PATH variable is the concatenation of the system-wide PATH of Windows with the user-specific PATH of Windows).
+
+And the configured Linux shell will inherit that PATH (see wezterm/wezterm.lua, line 'config.default_prog = ...').
+
+
+
+Verifying the installation
+--------------------------
+
+Windows : launch the script 0-review-installation.bat
+  Linux : launch WezTerm and enter the command 'review install'
+
+Note that their outputs have one difference: the Windows script also check that the sh.exe program is available. Obviously, the 'review install' command does not check this, as it is executed thanks to sh.exe (and it is assumed that you launch the 'review install' command in WezTerm as configured by wezterm/wezterm.lua).
+
