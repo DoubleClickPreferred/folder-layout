@@ -132,14 +132,21 @@ end
 -- Dedicated functions
 
 local finalFolderNameByProgramName = {
+   binaryen = 'bin',
    fd = '',
+   folderstore = '',
    fzf = '',
+   jdk = 'bin',
+   gitlfs = '',
    hashlink = '',
    haxe = '',
-   jdk = 'bin',
    lua = '',
    maven = 'bin',
+   neko = '',
    node = '',
+   nvim = 'bin',
+   php = '',
+   python = '',
    PortableGit = 'cmd',
    ripgrep = '',
    w64devkit = 'bin',

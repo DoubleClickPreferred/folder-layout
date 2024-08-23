@@ -32,7 +32,7 @@ rem 2. Prepare the use of WezTerm
 rem    The WEZTERM_CONFIG_FILE variable is picked up by WezTerm
 rem    The referenced file is the entry point of the configuration of WezTerm.
 rem --------------------------------------------------------------------------
-setx WEZTERM_CONFIG_FILE %~dp0wezterm\wezterm.lua
+setx WEZTERM_CONFIG_FILE %~dp0softwares\wezterm\wezterm.lua
 echo WEZTERM_CONFIG_FILE is set
 echo.
 echo.
@@ -54,7 +54,7 @@ set BIN_ABSOLUTE_FOLDER=%CD%
 rem -- Revert CD to its previous value
 popd
 
-%BIN_ABSOLUTE_FOLDER%\lua-5.2.3_Win64_bin\lua -linitialize 2-set-basic-environment-variables.lua %BIN_ABSOLUTE_FOLDER%
+%BIN_ABSOLUTE_FOLDER%\lua-5.2.3_Win64_bin\lua -linitialize softwares/lua/2-set-basic-environment-variables.lua %BIN_ABSOLUTE_FOLDER%
 echo user-specific PATH is set
 echo.
 echo.

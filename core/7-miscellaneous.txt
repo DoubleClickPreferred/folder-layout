@@ -1,0 +1,14 @@
+in softwares/*
+==============
+
+- gimp
+  modify the shortcut to the pinned app: "C:\Users\tkyen\AppData\Local\Programs\GIMP 2\bin\gimp-2.10.exe" -s
+
+- google-chrome
+   install bookmarks
+
+- obs
+   install config to C:\home\static\bin\OBS-Studio-30.2.2-Windows\config\obs-studio
+
+- opera
+   install bookmarks

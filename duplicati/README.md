@@ -26,7 +26,7 @@ Each folder layout is as follows:
 ```
 C:/home/
   core/                   --> clone of the core project from R:/repositories/core/
-  duplicati/              --> source or copy of B:/home/duplicati/
+  duplicati/              --> image of B:/home/duplicati/, scripts of backups and restores + the Duplicati database file
   static/                 --> sole folder backed up by Duplicati
   work/                   --> contains any Git clone from R:/repositories/work/
 
@@ -34,7 +34,7 @@ B:/
   backup/                 --> contains all the backed up files of the C:/home/static/ folder
     my_backup_is_here.txt --> empty file to indicate to Duplicati where to store the backup files
   home/
-    duplicati/            --> source or copy of all files to perform backups and restores
+    duplicati/            --> image of C:/home/duplicati/, scripts of backups and restores + the Duplicati database file
 
 R:/
   repositories/
